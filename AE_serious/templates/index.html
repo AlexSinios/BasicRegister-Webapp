@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Main Page
+{% endblock %}
+
+{% block main %}
+    {% if username %}
+        You are currently logged in as {{ username }}.
+    {% else %}
+        You are currently not logged in, use the menu at the top of the page to sign up or log in to your existing account.
+    {% endif %}
+{% endblock %}
