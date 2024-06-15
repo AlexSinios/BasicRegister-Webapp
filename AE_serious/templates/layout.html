@@ -1,4 +1,4 @@
-<!-- Bάση για τις διάφορες σελίδες HTML που θα χρησιμοποιήσει η εφαρμογή -->
+<!-- Bάση/Πρότυπο για τις διάφορες σελίδες HTML που θα χρησιμοποιήσει η εφαρμογή -->
 
 <!DOCTYPE html>
 
@@ -20,31 +20,34 @@
     </head>
 
     <body>
-        <!-- Εισαγωγή στοιχείου navbar της Bootstrap-->
-        <nav class="navbar navbar-expand-md border-bottom border-body" data-bs-theme="light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/">PLACEHOLDER</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <ul class="navbar-nav me-auto">
-                        <a class="nav-link active" aria-current="page" href="/">Home</a>
-                    </ul>
-                    {% if session["id"] %}
-                        <ul class="navbar-nav ms-auto">
-                            <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/deleteacc">Delete your account</a></li>
+        <header>
+            <!-- Εισαγωγή στοιχείου navbar της Bootstrap-->
+            <nav class="navbar navbar-dark navbar-expand-md border-bottom border-body bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="/">User Management</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <ul class="navbar-nav me-auto">
+                            <a class="nav-link active" aria-current="page" href="/">Home</a>
                         </ul>
-                    {% else %}
-                        <ul class="navbar-nav ms-auto">
-                            <li class="nav-item"><a class="nav-link" href="/signup">Sign Up</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/login">Log In</a></li>
-                        </ul>
-                    {% endif %}
+                        {% if session["id"] %}
+                            <ul class="navbar-nav ms-auto">
+                                <li class="nav-item"><a class="nav-link" href="/logout">Log Out </a></li>
+                                <li class="nav-item"><a class="nav-link" href="/changepwd">Change Password</a></li>
+                                <li class="nav-item"><a class="nav-link" href="/deleteacc">Delete your Account</a></li>
+                            </ul>
+                        {% else %}
+                            <ul class="navbar-nav ms-auto">
+                                <li class="nav-item"><a class="nav-link" href="/signup">Sign Up</a></li>
+                                <li class="nav-item"><a class="nav-link" href="/login">Log In</a></li>
+                            </ul>
+                        {% endif %}
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </header>
 
         {% if get_flashed_messages() %}
             <header>
