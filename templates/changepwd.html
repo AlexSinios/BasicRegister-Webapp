@@ -1,14 +1,18 @@
+<!-- Επέκταση προτύπου layout.html -->
 {% extends "layout.html" %}
 
+<!-- Τίτλος σελίδας -->
 {% block title %}
     Change Password
 {% endblock %}
 
+<!-- Βασικό σώμα σελίδας -->
 {% block main %}
     <header>
         <h3>Change your password using the form below:</h3>
     </header>
 
+    <!-- Φόρμα αλλαγής κωδικού χρήστη -->
     <form action="/changepwd" method="post">
         <div class="form-group">
             <input autofocus class="form-control" name="oldpass" placeholder="Current Password" type="password">
