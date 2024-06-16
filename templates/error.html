@@ -1,9 +1,15 @@
+<!-- Επέκταση προτύπου layout.html -->
 {% extends "layout.html" %}
 
+<!-- Τίτλος σελίδας -->
 {% block title %}
     Error
 {% endblock %}
 
+<!-- Βασικό σώμα σελίδας -->
 {% block main %}
+
+    <!-- Μήνυμα σφάλματος, ανάλογα με την περίσταση κλήσης της ιστοσελίδας-->
     Error {{ action }}, try again!
+    
 {% endblock %}
