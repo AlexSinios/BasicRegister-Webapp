@@ -18,13 +18,14 @@
         <!-- Eισαγωγή ρυθμίσεων CSS-->
         <link href="/static/styles.css" rel="stylesheet">
 
+        <!-- Συμπλήρωση εκάστοτε τίτλου, ανάλογα με την κάθε σελίδα που ακολουθεί το συγκεκριμένο πρότυπο, με τη βοήθεια του jinja templating engine-->
         <title> {% block title %}{% endblock %}</title>
 
     </head>
 
     <body>
         <header>
-            <!-- Εισαγωγή στοιχείου navbar της Bootstrap-->
+            <!-- Εισαγωγή στοιχείου navbar της Bootstrap: https://getbootstrap.com/docs/5.3/components/navbar/-->
             <nav class="navbar navbar-dark navbar-expand-md border-bottom border-body bg-dark">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="/">User Management</a>
@@ -35,6 +36,8 @@
                         <ul class="navbar-nav me-auto">
                             <a class="nav-link active" aria-current="page" href="/">Home</a>
                         </ul>
+
+                        <!-- Εμφάνιση διαφορετικών κουμπιών μετάβασης / επιλογών στον χρήστη ανάλογα με την κατάσταση σύνδεσής του-->
                         {% if session["id"] %}
                             <ul class="navbar-nav ms-auto">
                                 <li class="nav-item"><a class="nav-link" href="/logout">Log Out </a></li>
@@ -52,6 +55,7 @@
             </nav>
         </header>
 
+        <!-- Εμφάνιση flashed μηνυμάτων -->
         {% if get_flashed_messages() %}
             <header>
                 <div class="alert alert-primary border text-center" role="alert">
@@ -60,6 +64,7 @@
             </header>
         {% endif %}
 
+        <!-- Βασικό μέρος του σώματος της σελίδας που θα συμπληρώνεται ανάλογα στην κάθε εφαρμογή του προτύπου-->
         <main class="container p-5">
             {% block main %}{% endblock %}
         </main>
