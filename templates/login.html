@@ -1,14 +1,18 @@
+<!-- Επέκταση προτύπου layout.html -->
 {% extends "layout.html" %}
 
+<!-- Τίτλος σελίδας -->
 {% block title %}
     Log In
 {% endblock %}
 
+<!-- Βασικό σώμα σελίδας -->
 {% block main %}
     <header>
         <h3>Log into your account using the form below:</h3>
     </header>
 
+    <!-- Φόρμα σύνδεσης χρήστη στον λογαριασμό του -->
     <form action="/login" method="post">
         <div class="form-group">
             <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text">
