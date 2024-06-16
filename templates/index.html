@@ -1,13 +1,24 @@
+<!-- Επέκταση προτύπου layout.html -->
 {% extends "layout.html" %}
 
+<!-- Τίτλος σελίδας -->
 {% block title %}
     Main Page
 {% endblock %}
 
+<!-- Βασικό σώμα σελίδας -->
 {% block main %}
+
+    <!-- Αν ο χρήστης συνδεδεμένος -->
     {% if username %}
+        <!-- Εμφάνιση μηνύματος επιβεβαίωσης πως ο χρήστης συνδεδεμένος στον λογαριασμό με το όνομα χρήστη του -->
         You are currently logged in as {{ username }}.
+    
+    <!-- Αν ο χρήστης όχι συνδεδεμένος -->
     {% else %}
+
+        <!-- Εμφάνιση μηνύματος πως ο χρήστης δεν είναι συνδεδεμένος και προτροπή του για χρήση της μπάρας πλοήγησης για να εγγραφεί ή να συνδεθεί στην εφαρμογή -->
         You are currently not logged in, use the menu at the top of the page to sign up or log in to your existing account.
+        
     {% endif %}
 {% endblock %}
