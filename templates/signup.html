@@ -1,14 +1,18 @@
+<!-- Επέκταση προτύπου layout.html -->
 {% extends "layout.html" %}
 
+<!-- Τίτλος σελίδας -->
 {% block title %}
     Sign Up
 {% endblock %}
 
+<!-- Βασικό σώμα σελίδας -->
 {% block main %}
     <header>
         <h3>Create your account using the form below:</h3>
     </header>
 
+    <!-- Φόρμα εγγραφής χρήστη -->
     <form action="/signup" method="post">
         <div class="form-group">
             <input autocomplete="off" autofocus class="form-control" name="username" id="username" placeholder="Username" type="text">
